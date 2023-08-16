@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Text Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        .font-mono-space {
+            font-family: 'Space Mono', monospace;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header></header>
+    <main class="container">
+        <section class="py-5 bg-gradient-to-br from-blue-500  via-sky-400 via-50% to-sky-200 rounded-lg mt-20">
+            <h1 class="font-mono-space font-extrabold text-4xl text-center">My Text Editor</h1>
+            <div class="border-2 bg-blue-300 border-stone-950 rounded-lg mt-4 h-3/4 p-4 w-3/4 mx-auto">
+                <div class="grid grid-cols-3 border-b-2 pb-6 border-black text-xl">
+                    <div class="flex gap-4 items-center justify-center ">
+                        <i id="text-bold" class="fa-solid  fa-bold hover:cursor-pointer"></i>
+                        <i id="text-italic" class="fa-solid  fa-italic hover:cursor-pointer"></i>
+                        <i id="text-decoration" class="fa-solid  fa-underline hover:cursor-pointer"></i>
+                    </div>
+                    <div class="flex gap-4 items-center justify-center">
+                        <i id="align-left" class="fa-solid hover:cursor-pointer fa-align-left"></i>
+                        <i id="align-center" class="fa-solid hover:cursor-pointer fa-align-center"></i>
+                        <i id="align-right" class="fa-solid hover:cursor-pointer fa-align-right"></i>
+                        <i id="align-justify" class="fa-solid hover:cursor-pointer fa-align-justify"></i>
+                    </div>
+                    <div class="flex gap-4 items-center justify-center">
+                        <input type="number" name="" id="font-size"
+                            class="w-10 rounded-md bg-inherit outline-none focus:outline-2 focus:outline-offset-0 focus:outline-slate-900"
+                            value="16">
+                        <p id="text-transform" class="font-semibold hover:cursor-pointer">aA</p>
+                        <input type="color" name="" id="text-color">
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <textarea
+                        class="p-2 w-full h-80 rounded-md outline-none focus:outline-2 focus:outline-offset-0 focus:outline-slate-900"
+                        id="editor"></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src=" editor.js"></script>
+</body>
+
+</html>
