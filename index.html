@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
             font-family: 'Space Mono', monospace;
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -38,7 +39,7 @@
     <main class="container">
         <section class="py-5 bg-gradient-to-br from-blue-500  via-sky-400 via-50% to-sky-200 rounded-lg mt-20">
             <h1 class="font-mono-space font-extrabold text-4xl text-center">My Text Editor</h1>
-            <div class="border-2 bg-blue-300 border-stone-950 rounded-lg mt-4 h-3/4 p-4 w-3/4 mx-auto">
+            <div class="border-2 bg-blue-300 border-stone-950 rounded-lg mt-4 p-4 w-3/4 mx-auto">
                 <div class="grid grid-cols-3 border-b-2 pb-6 border-black text-xl">
                     <div class="flex gap-4 items-center justify-center ">
                         <i id="text-bold" class="fa-solid  fa-bold hover:cursor-pointer"></i>
@@ -60,10 +61,20 @@
                     </div>
                 </div>
                 <div class="mt-6">
-                    <textarea
-                        class="p-2 w-full h-80 rounded-md outline-none focus:outline-2 focus:outline-offset-0 focus:outline-slate-900"
+                    <textarea oninput="count()"
+                        class="p-2 w-full rounded-md outline-none  focus:outline-2 focus:outline-offset-0 focus:outline-slate-900 h-96"
                         id="editor"></textarea>
                 </div>
+                <div class="font-mono flex gap-3 items-center">
+                    <p class="flex items-center gap-2 text-sm"><span id="words-count">0</span>Words<span
+                            class="inline-block w-1 h-1 rounded-full bg-black"></span>
+                        <span id="characters-count">0</span> Characters
+                    </p>
+                    <div class="h-5 w-[2px] bg-gray-500"></div>
+                    <input onchange="count()" type="checkbox" class="toggle toggle-sm" checked id="check-space-count" />
+                    <p>Include spaces</p>
+                </div>
+
             </div>
         </section>
     </main>
